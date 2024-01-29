@@ -1,0 +1,13 @@
+.footerContent{
+    display: flex;
+    justify-content: space-around;
+    background-color: #888;
+    padding: 25px;
+    color: #fffefe;
+}
+.footerLeft{
+
+}
+.footerRight i{
+    padding-right: 10px;
+}
