@@ -45,7 +45,7 @@ function Products(){
             {products.map((product) => (
                 <div key={product.id}>
                     <h2>{product.title}</h2>
-                    <Link to="/product/id" element={<Product />}><img src={product.imageUrl} alt='Product image' />
+                    <Link to="/product/:id" element={<Product />}><img src={product.imageUrl} alt='Product image' />
                     </Link>
                     <p>{product.description}</p>
                 </div>

@@ -15,7 +15,7 @@ function Product() {
 
         const response = await fetch(url);
         const json = await response.json();
-        console.log(id)
+        console.log(id);
         setData(json);
       } catch (error) {
         console.log(error);
