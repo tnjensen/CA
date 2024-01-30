@@ -1,4 +1,19 @@
 .mainContent{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+.searchBar{
+    display: flex;
+    gap: 5px;
+    margin: 20px 0 0 20px;
+}
+.productCard{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin: 0 10px;
+}
+.productCard img{
+    max-width: 200px;
 }
