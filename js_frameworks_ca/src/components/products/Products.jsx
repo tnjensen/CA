@@ -44,15 +44,14 @@ function Products(){
     const searchItems = (searchValue) => {
         setSearchInput(searchValue);
         if (searchInput !== '') {
-            const filteredResults = products.filter((item) => {
+            const filteredData = products.filter((item) => {
                 return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
             })
-            setFilteredResults(filteredResults)
+            setFilteredResults(filteredData)
         }
         else{
             setFilteredResults(products)
         }
-        console.log(searchInput);
     }
 
     return(
@@ -65,13 +64,24 @@ function Products(){
         </span>
         </div>
         <div className={styles.mainContent}>
-            {filteredResults.map((product) => (
+        {searchInput.length > 1 ? (
+            filteredResults.map((product) => (
                 <div key={product.id} className={styles.productCard}>
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
                 </div>
-            ))}
+            ))
+        ) : (
+        products.map((product) => (
+                <div key={product.id} className={styles.productCard}>
+                    <h2>{product.title}</h2>
+                    <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
+                    <p>{product.description}</p>
+                </div>
+            ))
+        )
+    }    
         </div>
         </>
     );
