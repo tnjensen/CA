@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
 import Product from '../product/Product';
+import Cart from '../cart/Cart';
 
 function Products(){
     const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ function Products(){
     const url = baseUrl + "online-shop/";
     const [searchInput, setSearchInput] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
+    const [cart,setCart] = useState([]);
     
     useEffect(() => {
         async function getData(){
@@ -35,6 +37,10 @@ function Products(){
         getData();
     },[]);
     
+    const addToCart = (item) =>{
+        setCart([...cart, item]);
+        console.log(item)
+    }
     if(isLoading){
         return <div>Loading...</div>;
     }
@@ -78,6 +84,8 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
+                    <button className={styles.addToCartButton} onClick={() => addToCart(product)}>Add</button>
+                    {/* <Link to={"/cart"} element={<Cart />}>Add</Link> */}
                 </div>
             ))
         )

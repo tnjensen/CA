@@ -9,10 +9,10 @@ function Nav(){
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/product/1">Product 1</Link>
+                   {/*  <Link to="/product/1">Product 1</Link> */}
                 </li>
                 <li>
-                    <Link to="/product/2">Product 2</Link>
+                    {/* <Link to="/product/2">Product 2</Link> */}
                 </li>
             </ul>
         </nav>

@@ -9,7 +9,9 @@
 .headerLeft i{
     padding-right: 10px;
     cursor: pointer;
+    color: #fffefe;
 }
 .headerRight i{
     cursor: pointer;
+    color: #fffefe;
 }
