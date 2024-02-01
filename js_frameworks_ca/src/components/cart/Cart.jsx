@@ -1,16 +1,25 @@
 import styles from './cart.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Cart(){
-    const [cart,setCart] = useState([]);
+    const [items,setItems] = useState([JSON.parse(localStorage.getItem("cart"))]);
     
-    const addToCart = (item) =>{
-        setCart([...cart, item]);
-        console.log(item)
-    }
+    useEffect(() => {
+        if(items){
+            setItems(items);
+        }
+    }, [items]);
+   
     return(
         <div className={styles.cartContent}>
             <h1>Cart</h1>
+            {items.map((product) => (
+                <div key={product.id}>
+                <h2>{product.title}</h2>
+                <img src={product.imageUrl} />
+                <p>{product.description}</p>
+                </div>
+            ))}
         </div>
     )
 }

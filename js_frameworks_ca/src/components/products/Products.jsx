@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
 import Product from '../product/Product';
-import Cart from '../cart/Cart';
 
 function Products(){
     const [products, setProducts] = useState([]);
@@ -12,8 +11,15 @@ function Products(){
     const url = baseUrl + "online-shop/";
     const [searchInput, setSearchInput] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
-    const [cart,setCart] = useState([]);
+    const [items,setItems] = useState([]);
     
+    const saveItem = (product) => {
+        localStorage.setItem("cart", JSON.stringify(product));
+    }
+    useEffect((product) => {
+        setItems(product)
+    }, [items]);
+   
     useEffect(() => {
         async function getData(){
             try{
@@ -36,11 +42,7 @@ function Products(){
         }
         getData();
     },[]);
-    
-    const addToCart = (item) =>{
-        setCart([...cart, item]);
-        console.log(item)
-    }
+
     if(isLoading){
         return <div>Loading...</div>;
     }
@@ -76,6 +78,7 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
+                    <button className={styles.addToCartButton} onClick={() => saveItem(product)}>Add</button>
                 </div>
             ))
         ) : (
@@ -84,8 +87,7 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
-                    <button className={styles.addToCartButton} onClick={() => addToCart(product)}>Add</button>
-                    {/* <Link to={"/cart"} element={<Cart />}>Add</Link> */}
+                    <button className={styles.addToCartButton} onClick={() => saveItem(product)}>Add</button>
                 </div>
             ))
         )
