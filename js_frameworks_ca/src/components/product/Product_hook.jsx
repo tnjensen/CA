@@ -2,40 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Home from '../home/Home';
 import styles from './product.module.css';
+import useLocalStorage from '../hooks/useLocalStorage';
+import products from '../../assets/data/products';
 
-function Product() {
-  const [data, setData] = useState(null);
+function ProductHook() {
+  /* const [data, setData] = useState(null); */
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const [items,setItems] = useState([]);
-    
-  const saveItem = (product) => {
-      localStorage.setItem("cart", JSON.stringify(product));
-  }
-  useEffect((product) => {
-    console.log(items);
-      setItems(product)
-  }, [items]);
+  const [data,setData] = useLocalStorage("cart", {});
 
   useEffect(() => {
-    async function getData(url) {
-      try {
-        setIsLoading(true);
-        setIsError(false);
-        const response = await fetch(url);
-        const json = await response.json();
-        setData(json);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
+      setData(data)
+      console.log(data)
 
-    getData(`https://api.noroff.dev/api/v1/online-shop/${id}`);
-  }, [id]);
+  }, [data]);
 
+  
   if (isLoading || !data) {
     return <div>Loading</div>;
   }
@@ -59,4 +43,4 @@ function Product() {
     </>
   );
 }
-export default Product;
+export default ProductHook;

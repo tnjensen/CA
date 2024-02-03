@@ -11,7 +11,7 @@ function Header(){
                 <Link to={"/"} element={<Home />}><i className='fa fa-home'></i></Link>
                 LOGO
             </div>
-            <Nav />
+            <div className={styles.headerCenter}><Nav /></div>
             <div className={styles.headerRight}>
                 <Link to={"/cart"} element={<Cart />}><i className='fa fa-shopping-cart'></i></Link>
             </div>

@@ -11,6 +11,9 @@
     cursor: pointer;
     color: #fffefe;
 }
+.headerCenter{
+    margin-left: -60px;
+}
 .headerRight i{
     cursor: pointer;
     color: #fffefe;

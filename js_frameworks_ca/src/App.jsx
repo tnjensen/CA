@@ -4,8 +4,10 @@ import './App.module.css'
 import Layout from './components/layout/Layout'
 import Home from './components/home/Home'
 import RouteNotFound from './components/RouteNotFound.'
-import Product from './components/product/Product'
+/* import Product from './components/product/Product' */
+import ProductHook from './components/product/Product_hook'
 import Cart from './components/cart/Cart'
+import Checkout from './components/checkout/Checkout'
 
 function App() {
   const [products, setProducts] = useState(0);
@@ -15,8 +17,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='product/:id/' element={<Product />} />
+          <Route path='product/:id/' element={<ProductHook />} />
           <Route path='cart' element={<Cart />} />
+          <Route path='checkout' element={<Checkout />} />
           <Route path='*' element={<RouteNotFound />} />
         </Route>
       </Routes>

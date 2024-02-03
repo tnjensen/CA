@@ -2,26 +2,19 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
-import Product from '../product/Product';
+import ProductHook from '../product/Product_hook';
+import DisplayProducts from '../data/Products_local';
 
 function Products(){
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(DisplayProducts);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const url = baseUrl + "online-shop/";
     const [searchInput, setSearchInput] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
-    const [items,setItems] = useState([]);
-    
-    const saveItem = (product) => {
-        localStorage.setItem("cart", JSON.stringify(product));
-    }
-    useEffect((product) => {
-        setItems(product)
-    }, [items]);
    
     useEffect(() => {
-        async function getData(){
+        /* async function getData(){
             try{
                 //Clear any previous errors
                 setIsError(false);
@@ -40,7 +33,8 @@ function Products(){
                 setIsError(true);
             }
         }
-        getData();
+        getData(); */
+        setProducts(products);
     },[]);
 
     if(isLoading){
@@ -72,6 +66,7 @@ function Products(){
         </span>
         </div>
         <div className={styles.mainContent}>
+            <h1>Products</h1>
         {searchInput.length > 1 ? (
             filteredResults.map((product) => (
                 <div key={product.id} className={styles.productCard}>
@@ -87,11 +82,10 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
-                    <button className={styles.addToCartButton} onClick={() => saveItem(product)}>Add</button>
                 </div>
             ))
         )
-    }    
+    }  
         </div>
         </>
     );

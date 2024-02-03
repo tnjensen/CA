@@ -1,17 +1,30 @@
-.singleProduct{
+.mainContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mainContent h1{
+    flex: 0 0 100%;
+    margin-left: 25px;
+}
+.productCard{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 10px 0 40px 0;
+    max-width: 300px;
+    margin: 0 10px;
 }
-img{
-    max-width: 400px;
+.productCard img{
+    max-width: 300px;
 }
-.backButton{
+.addToCartButton{
     text-decoration: none;
+    border: none;
     cursor: pointer;
     background-color: #ff00ff;
     padding: 10px 20px;
     color: #fffefe;
+    margin-bottom: 10px;
+    max-width: 150px;
 }
