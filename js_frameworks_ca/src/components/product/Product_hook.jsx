@@ -16,7 +16,7 @@ function ProductHook() {
       setData(data)
       console.log(data)
 
-  }, [items]);
+  }, [data]);
 
   
   if (isLoading || !data) {
