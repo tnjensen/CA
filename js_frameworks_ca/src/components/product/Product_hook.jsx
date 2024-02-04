@@ -12,11 +12,11 @@ function ProductHook() {
   const { id } = useParams();
   const [items,setItems] = useState([]);
   
-  useEffect((data) => {
-      setData(data)
-      console.log(data)
+  useEffect((product) => {
+      setItems(product)
+      console.log(product)
 
-  }, [data]);
+  }, [items]);
 
   
   if (isLoading || !data) {
@@ -35,7 +35,7 @@ function ProductHook() {
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
         <p>{data.description}</p>
-        <button className={styles.addToCartButton} onClick={() => saveItem(data)}>Add to cart</button>
+        <button className={styles.addToCartButton} onClick={() => setData(data)}>Add to cart</button>
         <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
       </div>
     </div>
