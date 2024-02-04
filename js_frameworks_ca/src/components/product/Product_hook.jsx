@@ -6,15 +6,15 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import products from '../../assets/data/products';
 
 function ProductHook() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useLocalStorage([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const [items,setItems] = useState([]);
   
-  useEffect((product) => {
-      setItems(product)
-      console.log(product)
+  useEffect((data) => {
+      setData(data)
+      console.log(data)
 
   }, [items]);
 
