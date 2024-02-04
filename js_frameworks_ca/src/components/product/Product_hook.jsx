@@ -6,7 +6,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import products from '../../assets/data/products';
 
 function ProductHook() {
-  const [data, setData] = useLocalStorage([]);
+  const [data, setData] = useLocalStorage("cart", {});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
