@@ -6,18 +6,17 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import products from '../../assets/data/products';
 
 function ProductHook() {
-  /* const [data, setData] = useState(null); */
+  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const [items,setItems] = useState([]);
-  const [data,setData] = useLocalStorage("cart", {});
+  
+  useEffect((product) => {
+      setItems(product)
+      console.log(product)
 
-  useEffect(() => {
-      setData(data)
-      console.log(data)
-
-  }, [data]);
+  }, [items]);
 
   
   if (isLoading || !data) {
