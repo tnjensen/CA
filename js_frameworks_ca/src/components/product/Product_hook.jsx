@@ -4,33 +4,38 @@ import Home from '../home/Home';
 import styles from './product.module.css';
 import useLocalStorage from '../hooks/useLocalStorage';
 import products from '../../assets/data/products';
-
+import useProductDetail from '../hooks/useProductDetail';
+    
 function ProductHook() {
-  const [data, setData] = useState(products);
+  const { id } = useParams();
+  const [displayProduct, setData] = useProductDetail('');  
+  console.log(id);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const { id } = useParams();
   const [items,setItems] = useLocalStorage("cart", {});
   
-  useEffect((product) => {
-      setItems(product)
-      console.log(product)
+  useEffect(() => {
+    const data = products.filter((product => product.id === id));
+    console.log(data);
+    setData(data);
+    displayProduct();
 
-  }, [items]);
+  }, [data]);
 
   useEffect(() => {
-        setIsLoading(true);
-        setIsError(false);
-        setData(product => product.id === id);
-  }, [id]);
+    setIsLoading(true);
+    setIsError(false);
+    const filteredData = products.filter((product => product.id === id));
+    setItems(filteredData);
+  }, []);
 
-  if (isLoading || !data) {
+  /* if (isLoading || !data) {
     return <div>Loading</div>;
-  }
+  } */
 
-  if (isError) {
+ /*  if (isError) {
     return <div>Error</div>;
-  }
+  } */
 
   return (
     <>
@@ -40,7 +45,7 @@ function ProductHook() {
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
         <p>{data.description}</p>
-        <button className={styles.addToCartButton} onClick={() => setData(data)}>Add to cart</button>
+        <button className={styles.addToCartButton} onClick={() => setItems(data)}>Add to cart</button>
         <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
       </div>
     </div>

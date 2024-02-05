@@ -1,11 +1,9 @@
 .mainContent{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-}
-.mainContent h1{
-    flex: 0 0 100%;
-    margin-left: 25px;
+    align-items: center;
+    min-height: calc(100vh - 120px);
 }
 .productCard{
     display: flex;
