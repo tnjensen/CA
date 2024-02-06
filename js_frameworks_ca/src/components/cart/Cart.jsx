@@ -6,10 +6,9 @@ import useLocalStorage from '../hooks/useLocalStorage';
 
 function Cart(){
     /* const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]); */
-    const [cart,setCart,removeCart] = useLocalStorage("cart");
+    const [cart,setCart] = useLocalStorage("cart");
     const [cartTotal, setCartTotal] = useState(0);
     console.log(cart)
-    
     const total = () => {
         let totalPrice = 0;
         for(let i = 0; i < cart.length; i++){
@@ -32,7 +31,7 @@ function Cart(){
             <div className={styles.cartHeader}>
                 <h1>Shopping cart</h1>
             </div>
-           {/*  {cart.length ? (
+            {cart.length ? (
                 cart.map((product) => (
                 <div key={product.id} className={styles.productCard}>
                     <h2>{product.title}</h2>
@@ -45,16 +44,6 @@ function Cart(){
                 ) : (
                     <div>Nothing in cart yet</div>
                 )
-            } */}
-            {cart.map((product) => (
-                    <div key={product.id} className={styles.productCard}>
-                        <h2>{product.title}</h2>
-                        <img src={product.imageUrl} alt='Product image' />
-                        <p>{product.description}</p>
-                        <div className={styles.totalValue}>{`Total: ${cartTotal}`}</div>
-                        <Link to={"/checkout"} className={styles.checkoutButton} element={<Checkout />}>Checkout</Link>
-                    </div>
-                    ))
             }
     </div>
     )
