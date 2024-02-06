@@ -26,3 +26,8 @@
     margin-bottom: 10px;
     max-width: 150px;
 }
+.productPrice{
+    margin: 10px 0 20px 0;
+    border: 1px solid #ff00ff;
+    padding: 10px;
+}

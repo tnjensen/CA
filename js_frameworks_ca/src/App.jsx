@@ -8,6 +8,7 @@ import Product from './components/product/Product'
 /* import ProductHook from './components/product/Product_hook' */
 import Cart from './components/cart/Cart'
 import Checkout from './components/checkout/Checkout'
+import Shop from './components/shop/Shop'
 
 function App() {
   const [products, setProducts] = useState(0);
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='product/:id/' element={<Product />} />
           <Route path='cart' element={<Cart />} />
+          <Route path='shop' element={<Shop />} />
           <Route path='checkout' element={<Checkout />} />
           <Route path='*' element={<RouteNotFound />} />
         </Route>

@@ -8,15 +8,16 @@ function Product() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-  const [items,setItems] = useState([]);
-    
-  const saveItem = (product) => {
+  const [cart, setCart] = useState([]);
+  
+  const addToCart = (product) => {
       localStorage.setItem("cart", JSON.stringify(product));
   }
-  useEffect((product) => {
-    console.log(items);
-      setItems(product)
-  }, [items]);
+
+  useEffect(() => {
+    console.log(cart);
+    setCart(cart)
+  }, [cart]);
 
   useEffect(() => {
     async function getData(url) {
@@ -52,7 +53,8 @@ function Product() {
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
         <p>{data.description}</p>
-        <button className={styles.addToCartButton} onClick={() => saveItem(data)}>Add to cart</button>
+        <div className={styles.productPrice}>{`Price: ${data.price}`}</div>
+        <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
         <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
       </div>
     </div>

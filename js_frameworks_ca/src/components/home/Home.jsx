@@ -7,8 +7,8 @@ import styles from './home.module.css';
 function Home(){
     return(
         <>
-        <DisplayProducts />
-        {/* <Products /> */}
+        {/* <DisplayProducts /> */}
+        <Products />
         {/* <TestProducts /> */}
     </>
     )

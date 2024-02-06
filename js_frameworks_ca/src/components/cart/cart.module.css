@@ -30,3 +30,8 @@
     display: flex;
     justify-content: center;
 }
+.totalValue{
+    margin: 10px 0 20px 0;
+    border: 1px solid green;
+    padding: 10px;
+}

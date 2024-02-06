@@ -2,11 +2,11 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
-import ProductHook from '../product/Product_hook';
+import Product from '../product/Product';
 import DisplayProducts from '../data/Products_local';
 
 function Products(){
-    const [products, setProducts] = useState(DisplayProducts);
+    const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const url = baseUrl + "online-shop/";
@@ -14,7 +14,7 @@ function Products(){
     const [filteredResults, setFilteredResults] = useState([]);
    
     useEffect(() => {
-        /* async function getData(){
+        async function getData(){
             try{
                 //Clear any previous errors
                 setIsError(false);
@@ -33,8 +33,8 @@ function Products(){
                 setIsError(true);
             }
         }
-        getData(); */
-        setProducts(products);
+        getData();
+        /* setProducts(products); */
     },[]);
 
     if(isLoading){
