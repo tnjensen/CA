@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
 import Product from '../product/Product';
-import DisplayProducts from '../data/Products_local';
 
 function Products(){
     const [products, setProducts] = useState([]);
@@ -34,7 +33,6 @@ function Products(){
             }
         }
         getData();
-        /* setProducts(products); */
     },[]);
 
     if(isLoading){
@@ -73,7 +71,6 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
-                    <button className={styles.addToCartButton} onClick={() => saveItem(product)}>Add</button>
                 </div>
             ))
         ) : (

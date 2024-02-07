@@ -10,7 +10,7 @@ function Product() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-  const [cart, setCart] = useLocalStorage("cart", JSON.stringify(data));
+  const [cart, setCart] = useLocalStorage("cart", [JSON.stringify(data)]);
   
   const addToCart = (data) => {
       setCart(data);
