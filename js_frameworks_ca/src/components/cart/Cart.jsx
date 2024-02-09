@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Cart(){
-    const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]);
-    /* const [cart,setCart] = useLocalStorage("cart"); */
+    /* const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]); */
+    const [cart,setCart] = useLocalStorage("cart");
     const [cartTotal, setCartTotal] = useState([]);
     console.log(typeof(cart));
     console.log(Array.isArray(cart));
