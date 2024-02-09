@@ -5,25 +5,25 @@ import { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Cart(){
-    /* const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]); */
-    const [cart,setCart] = useLocalStorage("cart");
-    const [cartTotal, setCartTotal] = useState(0);
-    console.log(cart)
-    const total = () => {
-        let totalPrice = 0;
-        for(let i = 0; i < cart.length; i++){
-          totalPrice += cart[i].price;
-        }
-        setCartTotal(totalPrice);
-    }
-
+    const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]);
+    /* const [cart,setCart] = useLocalStorage("cart"); */
+    const [cartTotal, setCartTotal] = useState([]);
+    console.log(typeof(cart));
+    console.log(Array.isArray(cart));
     useEffect(() => {
+        const total = () => {
+            let totalPrice = 0;
+            for(let i = 0; i < cart.length; i++){
+              totalPrice += cart[i].price;
+            }
+            setCartTotal(totalPrice);
+        }
         if(cart){
             setCart(cart);
         } 
        
         total();
-    }, [cart]);
+    }, [cart, setCart]);
    
     
     return(
@@ -45,6 +45,7 @@ function Cart(){
                     <div>Nothing in cart yet</div>
                 )
             }
+            
     </div>
     )
 }

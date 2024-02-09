@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Home from '../home/Home';
 import styles from './product.module.css';
 import useLocalStorage from '../hooks/useLocalStorage';
-import products from '../../assets/data/products';
+/* import products from '../../assets/data/products'; */
 
 function Product() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-  const [cart, setCart] = useLocalStorage("cart", [JSON.stringify(data)]);
-  
+  const [cart, setCart] = useLocalStorage("cart", JSON.stringify(data));
+
   const addToCart = (data) => {
       setCart(data);
+      
   }
 
   useEffect(() => {

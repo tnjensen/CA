@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
@@ -33,7 +33,7 @@ function Products(){
             }
         }
         getData();
-    },[]);
+    },[url]);
 
     if(isLoading){
         return <div>Loading...</div>;

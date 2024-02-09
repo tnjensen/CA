@@ -17,7 +17,7 @@ function useLocalStorage(key,initialValue){
     //If the value passed to `setValue` is a function, it is called with the current value of `storedValue` as its argument. Otherwise, the value is used directly. 
     //The `valueToStore` variable is then set to the result of the function call or the value itself. 
     //The new value of `storedValue` is set with `setStoredValue`, and the `valueToStore` is stored in the `localStorage`.
-    const setValue = value => {
+    const setValue = (value) => {
         try{
             const valueToStore = value instanceof Function ? value(storedValue) : value;
             setStoredValue(valueToStore);
@@ -37,6 +37,6 @@ function useLocalStorage(key,initialValue){
         }
     }
     //Finally, the hook returns an array of `[storedValue, setValue, removeValue]`, which can be used to access and manipulate the stored value. The first element of the array is the current value of `storedValue`, the second element is the `setValue` function, and the third element is the `removeValue` function. This allows the component to get, set, and remove the data from `localStorage` using a simple and standardized interface.
-    return [storedValue,setValue, removeValue];
+    return [storedValue,setValue,removeValue];
 }
 export default useLocalStorage;
