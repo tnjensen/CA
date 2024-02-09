@@ -13,7 +13,12 @@ function Product() {
   const [cart, setCart] = useLocalStorage("cart", JSON.stringify(data));
 
   const addToCart = (data) => {
-      setCart(...cart, [data]);
+    if(cart.length > 0){
+      const newCart = cart.concat([data]);
+      setCart(newCart);
+    }else{
+      setCart([data]);
+    }
   }
 
   useEffect(() => {
