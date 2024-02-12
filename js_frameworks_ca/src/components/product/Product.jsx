@@ -3,24 +3,20 @@ import { Link, useParams } from 'react-router-dom';
 import Home from '../home/Home';
 import styles from './product.module.css';
 import useLocalStorage from '../hooks/useLocalStorage';
-/* import products from '../../assets/data/products'; */
 
 function Product() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-  const [cart, setCart] = useLocalStorage("cart", JSON.stringify(data));
-
+  const [cart, setCart] = useLocalStorage("cart", []);
+  
   const addToCart = (data) => {
-    if(cart.length > 0){
-      const newCart = cart.concat([data]);
-      setCart(newCart);
-    }else{
-      setCart([data]);
-    }
-  }
-
+    setCart((cart) => {
+      return [data, ...cart];
+  });
+}
+ 
   useEffect(() => {
     async function getData(url) {
       try {

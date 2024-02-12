@@ -5,47 +5,51 @@ import { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Cart(){
-    /* const [cart,setCart] = useState([JSON.parse(localStorage.getItem("cart"))]); */
-    const [cart,setCart] = useLocalStorage("cart");
+    const [cart,setCart,clearCart] = useLocalStorage("cart");
     const [cartTotal, setCartTotal] = useState([]);
-    console.log(typeof(cart));
-    console.log(Array.isArray(cart));
+    
     useEffect(() => {
-        const total = () => {
-            let totalPrice = 0;
-            for(let i = 0; i < cart.length; i++){
-              totalPrice += cart[i].price;
-            }
-            setCartTotal(totalPrice);
-        }
         if(cart){
+            const total = () => {
+                let totalPrice = 0;
+                for(let i = 0; i < cart.length; i++){
+                  totalPrice += cart[i].price;
+                }
+                const formatTotal = totalPrice.toFixed(2);
+                setCartTotal(formatTotal);
+            }
             setCart(cart);
+            total();
         } 
        
-        total();
     }, [cart, setCart]);
    
-    
     return(
         <div className={styles.cartContent}>
             <div className={styles.cartHeader}>
                 <h1>Shopping cart</h1>
             </div>
-            {cart.length ? (
+            {cart ? (
                 cart.map((product) => (
                 <div key={product.id} className={styles.productCard}>
                     <h2>{product.title}</h2>
                     <img src={product.imageUrl} alt='Product image' />
                     <p>{product.description}</p>
-                    <div className={styles.totalValue}>{`Total: ${cartTotal}`}</div>
-                    <Link to={"/checkout"} className={styles.checkoutButton} element={<Checkout />}>Checkout</Link>
+                    <Link to={"/cart"} className={styles.clearButton} onClick={clearCart}>Remove</Link>
                 </div>
-                ))     
+                ))   
+                  
                 ) : (
-                    <div>Nothing in cart yet</div>
+                    <div className={styles.noContent}>Nothing in cart yet</div>
+                ) 
+            }
+           {cart ? (
+            <div className={styles.totalValue}>{`Total: ${cartTotal}`}
+            <Link to={"/checkout"} className={styles.checkoutButton} element={<Checkout />}>Checkout</Link></div> 
+                ) : (
+                    <div></div>
                 )
             }
-            
     </div>
     )
 }

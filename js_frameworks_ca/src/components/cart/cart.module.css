@@ -2,8 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     padding: 15px;
+}
+.noContent{
+    margin: 0 auto;
 }
 .cartHeader{
     flex: 0 0 100%;
@@ -31,7 +34,15 @@
     justify-content: center;
 }
 .totalValue{
-    margin: 10px 0 20px 0;
+    position: absolute;
+    top: 90px;
+    right: 15px;
     border: 1px solid green;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-height: 100px;
 }
