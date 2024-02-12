@@ -22,3 +22,6 @@
 .productCard img{
     max-width: 220px;
 }
+.productCard img:hover{
+    opacity: .8;
+}

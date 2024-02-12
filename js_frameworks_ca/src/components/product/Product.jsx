@@ -51,7 +51,18 @@ function Product() {
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
         <p>{data.description}</p>
-        <div className={styles.productPrice}>{`Price: ${data.price}`}</div>
+        {data.discountedPrice !== data.price ? (
+          <>
+          <div className={styles.productPrice}>{`Discounted price: $${data.discountedPrice}`}</div>
+         <div className={styles.discountPrice}>{`You save: $${data.price - data.discountedPrice}`}</div>
+         </>
+        ) : (
+          <>
+          <div className={styles.productPrice}>{`Price: $${data.discountedPrice}`}</div>
+          <div className={styles.discountPrice}>{`Not on offer - $${data.price - data.discountedPrice} off`}</div>
+          </>
+          )
+        }
         <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
         <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
       </div>
