@@ -4,7 +4,6 @@ import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
 import Product from '../product/Product';
 import useCounter from '../hooks/useCounter';
-import useLocalStorage from '../hooks/useLocalStorage';
 
 function Products(){
     const [products, setProducts] = useState([]);
@@ -14,7 +13,7 @@ function Products(){
     const [searchInput, setSearchInput] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
     const [counter, setCounter] = useCounter("count");
-    const [cart, setCart] = useLocalStorage("cart", []);
+    /* const [cart, setCart] = useLocalStorage("cart", []); */
     
     useEffect(() => {
         async function getData(){
@@ -37,7 +36,7 @@ function Products(){
             }
         }
         getData();
-    },[url,cart,setCounter,setCart]);
+    },[url,setCounter]);
 
     if(isLoading){
         return <div>Loading...</div>;

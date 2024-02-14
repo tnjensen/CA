@@ -38,7 +38,7 @@ function Cart(){
                 <div className={styles.counter}>{counter}</div>
             </div>
             <div className={styles.cartCards}>
-            {cart.length ? (
+            {cart ? (
                 cart.map((product) => (
                 <div key={product.id} className={styles.productCard}>
                     <h2>{product.title}</h2>
@@ -53,7 +53,7 @@ function Cart(){
                 ) 
             }
             </div>
-           {cart.length ? (
+           {cart ? (
             <div className={styles.totalValue}>{`Total: ${cartTotal}`}
             <Link to={"/checkout"} className={styles.checkoutButton} element={<Checkout />}>Checkout</Link></div> 
                 ) : (
