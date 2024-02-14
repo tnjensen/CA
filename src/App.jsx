@@ -24,7 +24,7 @@ function App() {
           <Route path='shop' element={<Shop />} />
           <Route path='checkout' element={<Checkout />} />
           <Route path='contact' element={<Contact />} />
-          {/* <Route path='*' element={<RouteNotFound />} /> */}
+          <Route path='*' element={<RouteNotFound />} />
         </Route>
       </Routes>
     </div>
