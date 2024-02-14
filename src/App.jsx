@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route,Link, useParams } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import './App.module.css'
 import Layout from './components/layout/Layout'
 import Home from './components/home/Home'
@@ -24,7 +24,7 @@ function App() {
           <Route path='shop' element={<Shop />} />
           <Route path='checkout' element={<Checkout />} />
           <Route path='contact' element={<Contact />} />
-          <Route path='*' element={<RouteNotFound />} />
+          {/* <Route path='*' element={<RouteNotFound />} /> */}
         </Route>
       </Routes>
     </div>
