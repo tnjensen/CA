@@ -2,16 +2,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 100vh;
 }
 .mainContent h1{
-    flex: 0 0 100%;
-    margin-left: 25px;
+    min-width: 100%;
+    text-align: center;
 }
 .searchBar{
     display: flex;
     align-items: center;
     gap: 7px;
     margin: 20px 0 0 15px;
+}
+.counter{
+    color: #fffefe;
+    background-color: #ff00ff;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 50%;
+    padding: 0 3px;
 }
 .productCard{
     display: flex;

@@ -1,0 +1,47 @@
+.mainContent{
+    min-height: 100vh;
+    text-align: center;
+}
+.contactForm{
+    position: relative;
+    left: -20px;
+}
+label{
+   display: inline-block;
+   text-align: right;
+   width: 100px;
+   
+}
+input{
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #777;
+    border-radius: 3px;
+}
+textarea{
+    position: relative;
+    left: -5px;
+   display: inline-block;
+   width: 180px;
+   margin: 10px 0 0 10px;
+}
+.messageLabel{
+    position: relative;
+    top: -40px;
+}
+.submitButton{
+    margin-top: 20px;
+    padding: 10px 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #ff00ff;
+    color: #fffefe;
+    border: none;
+    position: relative;
+    left: 50px;
+    width: 190px;
+    border-radius: 3px;
+}
+.submitButton:hover{
+    opacity: .7;
+}

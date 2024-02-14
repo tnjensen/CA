@@ -21,13 +21,32 @@
     border: none;
     cursor: pointer;
     background-color: #ff00ff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     color: #fffefe;
-    margin: 10px 0;
-    max-width: 150px;
+    margin: 10px 0 20px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.addToCartButton:hover{
+    opacity: .7;
 }
 .productPrice{
     margin: 10px 0 20px 0;
     border: 1px solid #ff00ff;
     padding: 10px;
+    text-transform: uppercase;
+}
+.counter{
+    color: #fffefe;
+    background-color: #ff00ff;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 50%;
+    padding: 0 3px;
+}
+.discountPrice{
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
 }

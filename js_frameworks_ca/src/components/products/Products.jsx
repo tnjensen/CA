@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './products.module.css';
 import { baseUrl } from '../common/settings';
 import Product from '../product/Product';
+import useCounter from '../hooks/useCounter';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function Products(){
     const [products, setProducts] = useState([]);
@@ -11,7 +13,9 @@ function Products(){
     const url = baseUrl + "online-shop/";
     const [searchInput, setSearchInput] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
-   
+    const [counter, setCounter] = useCounter("count");
+    const [cart, setCart] = useLocalStorage("cart", []);
+    
     useEffect(() => {
         async function getData(){
             try{
@@ -33,7 +37,7 @@ function Products(){
             }
         }
         getData();
-    },[url]);
+    },[url,cart]);
 
     if(isLoading){
         return <div>Loading...</div>;
@@ -65,6 +69,7 @@ function Products(){
         </div>
         <div className={styles.mainContent}>
             <h1>Products</h1>
+            <div className={styles.counter}>{counter}</div>
         {searchInput.length > 1 ? (
             filteredResults.map((product) => (
                 <div key={product.id} className={styles.productCard}>

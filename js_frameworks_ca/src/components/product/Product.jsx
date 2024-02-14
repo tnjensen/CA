@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Home from '../home/Home';
 import styles from './product.module.css';
 import useLocalStorage from '../hooks/useLocalStorage';
+import useCounter from '../hooks/useCounter';
 
 function Product() {
   const [data, setData] = useState(null);
@@ -10,8 +11,10 @@ function Product() {
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const [cart, setCart] = useLocalStorage("cart", []);
+  const [counter, setCounter] = useCounter(0);
   
   const addToCart = (data) => {
+    setCounter(counter + 1);
     setCart((cart) => {
       return [data, ...cart];
   });
@@ -47,19 +50,20 @@ function Product() {
     <>
     <div className={styles.mainContent}>
       <h1>Product details</h1>
+      <div className={styles.counter}>{counter}</div>
       <div className={styles.productCard}>
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
         <p>{data.description}</p>
         {data.discountedPrice !== data.price ? (
           <>
-          <div className={styles.productPrice}>{`Discounted price: $${data.discountedPrice}`}</div>
+          <div className={styles.productPrice}>{`On offer: $${data.discountedPrice}`}</div>
          <div className={styles.discountPrice}>{`You save: $${data.price - data.discountedPrice}`}</div>
          </>
         ) : (
           <>
           <div className={styles.productPrice}>{`Price: $${data.discountedPrice}`}</div>
-          <div className={styles.discountPrice}>{`Not on offer - $${data.price - data.discountedPrice} off`}</div>
+          <div className={styles.discountPrice}>{`Not on offer`}</div>
           </>
           )
         }

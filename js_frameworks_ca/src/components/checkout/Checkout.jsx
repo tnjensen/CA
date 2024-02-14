@@ -1,19 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from './checkout.module.css';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Link } from "react-router-dom";
 import Home from "../home/Home";
+import useCounter from '../hooks/useCounter';
 
 function Checkout(){
-    const [checkoutItems,setCheckoutItems] = useState([]);
     const [cart,setCart,clearCart] = useLocalStorage("cart");
+    const [counter, setCounter] = useCounter("count");
 
     useEffect(() => {
+        setCounter(0);
         if(cart){
             setCart(clearCart);
         } 
        
-    }, [cart, setCart, clearCart]);
+    }, [cart, setCart, counter, setCounter, clearCart]);
 
     return(
         <div className={styles.checkoutContent}>

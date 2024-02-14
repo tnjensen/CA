@@ -9,6 +9,7 @@ import Product from './components/product/Product'
 import Cart from './components/cart/Cart'
 import Checkout from './components/checkout/Checkout'
 import Shop from './components/shop/Shop'
+import Contact from './components/contact/Contact'
 
 function App() {
   const [products, setProducts] = useState(0);
@@ -22,6 +23,7 @@ function App() {
           <Route path='cart' element={<Cart />} />
           <Route path='shop' element={<Shop />} />
           <Route path='checkout' element={<Checkout />} />
+          <Route path='contact' element={<Contact />} />
           <Route path='*' element={<RouteNotFound />} />
         </Route>
       </Routes>
