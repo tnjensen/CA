@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import styles from './contact.module.css';
+import useCounter from '../hooks/useCounter';
 
 function Contact(){
     const [message,setMessage] = useState("");
+    const [counter, setCounter] = useCounter("count");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,6 +19,7 @@ function Contact(){
     return(
         <div className={styles.mainContent}>
             <h2 className={styles.contactHeader}>Contact us</h2>
+            <div className={styles.counter}>{counter}</div>
             {message && <div className={styles.submitMessage}>{message}</div>}
             <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div><label htmlFor='fullName'>Full Name</label>

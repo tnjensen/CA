@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 120px);
+    position: relative;
 }
 .productCard{
     display: flex;
@@ -41,7 +42,7 @@
     color: #fffefe;
     background-color: #ff00ff;
     position: absolute;
-    top: 15px;
+    top: -57px;
     right: 10px;
     border-radius: 50%;
     padding: 0 3px;
