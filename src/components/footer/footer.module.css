@@ -9,5 +9,6 @@
 
 }
 .footerRight i{
-    padding-right: 10px;
+    cursor: pointer;
+    padding-right: 15px;
 }
