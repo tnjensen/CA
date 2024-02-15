@@ -12,12 +12,14 @@ function Product() {
   const { id } = useParams();
   const [cart, setCart] = useLocalStorage("cart", []);
   const [counter, setCounter] = useCounter(0);
-  
+  const [message,setMessage] = useState("");
+
   const addToCart = (data) => {
     setCounter(counter + 1);
     setCart((cart) => {
       return [data, ...cart];
   });
+  setMessage("Product added to cart");
 }
  
   useEffect(() => {
@@ -51,6 +53,8 @@ function Product() {
     <div className={styles.mainContent}>
       <h1>Product details</h1>
       <div className={styles.counter}>{counter}</div>
+      {message && <div className={styles.addToCartMessage}>{message}
+      <i className="fa-solid fa-square-up-right"></i></div>}
       <div className={styles.productCard}>
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>

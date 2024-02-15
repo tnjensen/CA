@@ -50,3 +50,12 @@
     margin: 0 0 10px 0;
     text-transform: uppercase;
 }
+.addToCartMessage{
+    border: 1px solid #ff00ff;
+    padding: 5px;
+    width: 250px;
+}
+.mainContent i {
+    margin-left: 60px;
+    font-size: 20px;
+}
