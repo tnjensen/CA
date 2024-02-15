@@ -15,7 +15,7 @@ function Checkout(){
             setCart(clearCart);
         } 
        
-    }, [cart, setCart, setCounter, clearCart]);
+    }, [cart, setCart, counter, setCounter, clearCart]);
 
     return(
         <div className={styles.checkoutContent}>

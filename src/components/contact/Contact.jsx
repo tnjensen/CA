@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import styles from './contact.module.css';
 
 function Contact(){
-    
+    const [message,setMessage] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -9,10 +11,13 @@ function Contact(){
 
         const json = Object.fromEntries(formData.entries());
         console.log(json);
+        setMessage("Message sent");
+        e.target.reset();
     }
     return(
         <div className={styles.mainContent}>
             <h2 className={styles.contactHeader}>Contact us</h2>
+            {message && <div className={styles.submitMessage}>{message}</div>}
             <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div><label htmlFor='fullName'>Full Name</label>
                 <input type='text' name='fullName' minLength='3' required />

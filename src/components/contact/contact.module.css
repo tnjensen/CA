@@ -21,9 +21,9 @@ input{
 textarea{
     position: relative;
     left: -5px;
-   display: inline-block;
-   width: 180px;
-   margin: 10px 0 0 10px;
+    display: inline-block;
+    width: 180px;
+    margin: 10px 0 0 10px;
 }
 .messageLabel{
     position: relative;
@@ -44,4 +44,29 @@ textarea{
 }
 .submitButton:hover{
     opacity: .7;
+}
+.submitMessage{
+    border: 1px solid #ff00ff;
+    padding: 5px;
+    width: 250px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media screen and (min-width: 768px){
+    h2{
+        font-size: 26px;
+    }
+    label{
+        font-size: 18px;
+    }
+    input{
+        width: 250px;
+    }
+    textarea{
+        width: 255px;
+    }
+    .submitButton{
+        width: 260px;
+    }
 }

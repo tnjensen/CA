@@ -60,11 +60,8 @@ function Products(){
     return(
         <>
         <div className={styles.searchBar}>
-        Search: 
-        <span>
-            <input type="text" placeholder='Find product' 
+            <input type="text" name='products' placeholder='Find product' 
             onChange={(e) => searchItems(e.target.value)}/>
-        </span>
         </div>
         <div className={styles.mainContent}>
             <h1>Products</h1>
