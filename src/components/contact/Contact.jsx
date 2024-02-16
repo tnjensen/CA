@@ -16,6 +16,7 @@ function Contact(){
         setMessage("Message sent");
         e.target.reset();
     }
+    
     return(
         <div className={styles.mainContent}>
             <h2 className={styles.contactHeader}>Contact us</h2>

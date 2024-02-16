@@ -6,7 +6,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import useCounter from '../hooks/useCounter';
 
 function Cart(){
-    const [cart,setCart,clearCart] = useLocalStorage("cart");
+    const [cart,setCart,clearCart] = useLocalStorage("cart",[]);
     const [cartTotal, setCartTotal] = useState([]);
     const [counter, setCounter] = useCounter("count");
 
@@ -38,7 +38,7 @@ function Cart(){
                 <div className={styles.counter}>{counter}</div>
             </div>
             <div className={styles.cartCards}>
-            {cart ? (
+            {cart.length ? (
                 cart.map((product) => (
                 <div key={product.id} className={styles.productCard}>
                     <h2>{product.title}</h2>
@@ -53,7 +53,7 @@ function Cart(){
                 ) 
             }
             </div>
-           {cart ? (
+           {cart.length ? (
             <div className={styles.totalValue}>{`Total: ${cartTotal}`}
             <Link to={"/checkout"} className={styles.checkoutButton} element={<Checkout />}>Checkout</Link></div> 
                 ) : (

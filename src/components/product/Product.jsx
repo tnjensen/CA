@@ -51,8 +51,8 @@ function Product() {
   return (
     <>
     <div className={styles.mainContent}>
-      <h1>Product details</h1>
       <div className={styles.counter}>{counter}</div>
+      <Link to={"/"} className={styles.backButton} element={<Home />}><i className="fa-solid fa-arrow-left"></i>Continue shopping</Link>
       {message && <div className={styles.addToCartMessage}>{message}
       <i className="fa-solid fa-square-up-right"></i></div>}
       <div className={styles.productCard}>
@@ -72,7 +72,6 @@ function Product() {
           )
         }
         <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
-        <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
       </div>
     </div>
     </>

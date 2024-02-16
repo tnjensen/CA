@@ -9,7 +9,7 @@ function Header(){
         <header className={styles.headerTop}>
             <div className={styles.headerLeft}>
                 <Link to={"/"} element={<Home />}><i className='fa fa-home'></i></Link>
-                LOGO
+                SHOP
             </div>
             <div className={styles.headerCenter}><Nav /></div>
             <div className={styles.headerRight}>
