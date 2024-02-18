@@ -2,6 +2,7 @@
    --primary-color: #0000ff;
    --secondary-color: #ff00ff;
    --tertiary-color: #00ffff;
+   --footer-background: #555;
 }
 body{
   max-width: 1440px;

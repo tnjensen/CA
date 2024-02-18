@@ -1,7 +1,7 @@
 .footerContent{
     display: flex;
     justify-content: space-around;
-    background-color: #555;
+    background-color: var(--footer-background);
     padding: 25px;
     color: #fffefe;
 }
