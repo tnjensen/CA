@@ -25,7 +25,7 @@
 .productCard{
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 40px 10px;
+    padding: 0 10px 40px 10px;
     max-width: 300px;
     margin: 10px;
     border: 1px solid rgba(33,33,33,.3);
@@ -86,7 +86,7 @@
 }
 .backButton{
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 15px;
     position: relative;
     left: -90px;
 }
@@ -105,8 +105,6 @@
     }
     .reviewContainer{
         order: 1;
-        position: relative;
-        top: -100px;
     }
     .review{
     max-width: 200px;
