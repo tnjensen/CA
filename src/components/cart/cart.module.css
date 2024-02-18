@@ -35,8 +35,8 @@
 }
 .totalValue{
     position: absolute;
-    top: 90px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     border: 1px solid green;
     padding: 10px;
     display: flex;
@@ -48,7 +48,7 @@
 }
 .counter{
     color: #fffefe;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     position: absolute;
     top: -58px;
     right: 10px;

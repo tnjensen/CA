@@ -2,14 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0000ff;
-    color: #fffefe;
+    /* background-color: var(--primary-color);
+    color: #fffefe; */
     padding: 15px;
 }
 .headerLeft i{
     padding-right: 10px;
     cursor: pointer;
-    color: #fffefe;
+    /* color: #fffefe; */
+}
+.headerLeft i:active{
+    color: black;
 }
 .headerCenter{
     margin-left: -30px;
@@ -18,5 +21,8 @@
 }
 .headerRight i{
     cursor: pointer;
-    color: #fffefe;
+    /* color: #fffefe; */
+}
+.headerRight i:active{
+    color: black;
 }

@@ -23,7 +23,7 @@ textarea{
     position: relative;
     left: -5px;
     display: inline-block;
-    width: 180px;
+    width: 170px;
     margin: 10px 0 0 10px;
 }
 .messageLabel{
@@ -31,20 +31,21 @@ textarea{
     top: -40px;
 }
 .submitButton{
-    margin-top: 20px;
+    margin: 20px 0 40px 0;
     padding: 10px 0px;
     font-size: 18px;
     text-transform: uppercase;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     color: #fffefe;
     border: none;
     position: relative;
     left: 50px;
-    width: 190px;
+    width: 175px;
     border-radius: 3px;
 }
 .submitButton:hover{
     opacity: .7;
+    cursor: pointer;
 }
 .submitMessage{
     border: 1px solid #ff00ff;
@@ -56,7 +57,7 @@ textarea{
 }
 .counter{
     color: #fffefe;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     position: absolute;
     top: -80px;
     right: 10px;

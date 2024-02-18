@@ -34,7 +34,7 @@ function Cart(){
     return(
         <div className={styles.cartContent}>
             <div className={styles.cartHeader}>
-                <h1>Shopping cart</h1>
+                <h1>Cart</h1>
                 <div className={styles.counter}>{counter}</div>
             </div>
             <div className={styles.cartCards}>

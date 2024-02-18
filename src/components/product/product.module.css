@@ -3,16 +3,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 120px);
+    gap: 20px;
+    min-height: 100vh;
     position: relative;
+}
+.reviewContainer{
+    display: flex;
+    flex-direction: column;
+}
+.review{
+    background-color: var(--tertiary-color);
+    margin-bottom: 10px;
+    opacity: .7;
+    padding: 10px 20px 30px 20px;
+    margin: 20px;
+    max-width: 300px;
+
 }
 .productCard{
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 10px 0 40px 0;
     max-width: 300px;
-    margin: 0 10px;
+    margin: 10px;
 }
 .productCard img{
     max-width: 300px;
@@ -22,7 +35,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     padding: 12px 20px;
     color: #fffefe;
     margin: 10px 0 20px 0;
@@ -32,16 +45,17 @@
 }
 .addToCartButton:hover{
     opacity: .7;
+    
 }
 .productPrice{
     margin: 10px 0 20px 0;
-    border: 1px solid #ff00ff;
+    border: 1px solid var(--secondary-color);
     padding: 10px;
     text-transform: uppercase;
 }
 .counter{
     color: #fffefe;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     position: absolute;
     top: -57px;
     right: 10px;
@@ -53,7 +67,7 @@
     text-transform: uppercase;
 }
 .addToCartMessage{
-    border: 1px solid #ff00ff;
+    border: 1px solid var(--secondary-color);
     padding: 5px;
     width: 250px;
 }
@@ -65,7 +79,7 @@
     text-decoration: none;
     margin-top: 20px;
     position: relative;
-    left: -350px;
+    left: -90px;
 }
 .backButton:hover{
     text-decoration: underline;
@@ -74,4 +88,23 @@
     margin-right: 10px;
     position: relative;
     top: 2px;   
+}
+@media screen and (min-width: 768px){
+    .mainContent{
+        flex-direction: row;
+        gap: 40px;
+    }
+    .reviewContainer{
+        order: 1;
+        position: relative;
+        top: -100px;
+    }
+    .review{
+    max-width: 200px;
+    }
+    .backButton{
+        position: absolute;
+        top: 0;
+        left: 40px;
+    }
 }

@@ -1,10 +1,16 @@
 :root {
- 
+   --primary-color: #0000ff;
+   --secondary-color: #ff00ff;
+   --tertiary-color: #00ffff;
 }
 body{
-  margin: 0;
+  max-width: 1440px;
+  margin: 0 auto;
   min-height: 100vh;
   background-color: #e6e3e3;
+}
+a:active{
+  color: black;
 }
 
 

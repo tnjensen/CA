@@ -10,7 +10,7 @@ function Product() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
-  const [cart, setCart] = useLocalStorage("cart", []);
+  const [cart, setCart] = useLocalStorage("cart");
   const [counter, setCounter] = useCounter(0);
   const [message,setMessage] = useState("");
 
@@ -53,8 +53,15 @@ function Product() {
     <div className={styles.mainContent}>
       <div className={styles.counter}>{counter}</div>
       <Link to={"/"} className={styles.backButton} element={<Home />}><i className="fa-solid fa-arrow-left"></i>Continue shopping</Link>
-      {message && <div className={styles.addToCartMessage}>{message}
-      <i className="fa-solid fa-square-up-right"></i></div>}
+      <div className={styles.reviewContainer}>
+        {data.reviews.map((review) => (
+          <div key={review.id} className={styles.review}>
+          <h3>Reviewed by: {review.username}</h3>
+          <p>{review.description}</p>
+          <span>Rating: {review.rating}</span>
+          </div>
+        ))}
+        </div>
       <div className={styles.productCard}>
         <h2>{data.title}</h2>
         <img src={data.imageUrl} alt='Post image'/>
@@ -71,6 +78,8 @@ function Product() {
           </>
           )
         }
+        {message && <div className={styles.addToCartMessage}>{message}
+      <i className="fa-solid fa-square-up-right"></i></div>}
         <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
       </div>
     </div>
