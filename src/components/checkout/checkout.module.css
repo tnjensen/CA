@@ -8,7 +8,7 @@
 }
 .counter{
     color: #fffefe;
-    background-color: #ff00ff;
+    background-color: var(--primary-color);
     position: absolute;
     top: -58px;
     right: 10px;
