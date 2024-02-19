@@ -117,3 +117,8 @@
         
     }
 }
+@media (orientation: landscape){
+    .productCard{
+        margin-top: 60px;
+    }
+}
