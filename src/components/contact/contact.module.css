@@ -3,9 +3,11 @@
     text-align: center;
     position: relative;
 }
+.mainContent h2{
+    margin-top: 40px;
+}
 .contactForm{
-    position: relative;
-    left: -20px;
+    margin-top: 30px;
 }
 label{
    display: inline-block;

@@ -19,7 +19,7 @@ function Contact(){
     
     return(
         <div className={styles.mainContent}>
-            <h2 className={styles.contactHeader}>Contact us</h2>
+            <h1 className={styles.contactHeader}>Contact us</h1>
             <div className={styles.counter}>{counter}</div>
             {message && <div className={styles.submitMessage}>{message}</div>}
             <form onSubmit={handleSubmit} className={styles.contactForm}>
