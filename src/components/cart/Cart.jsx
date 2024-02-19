@@ -40,7 +40,7 @@ function Cart(){
             <div className={styles.cartCards}>
             {cart.length ? (
                 cart.map((product) => (
-                <div key={product.id} className={styles.productCard}>
+                <div key={product.id} className={styles.cartCard}>
                     <h2>{product.title}</h2>
                     <img src={product.imageUrl} alt='Product image' />
                     <p>{product.description}</p>
