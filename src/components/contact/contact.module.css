@@ -7,7 +7,7 @@
     margin-top: 40px;
 }
 .contactForm{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 label{
    display: inline-block;
@@ -21,15 +21,18 @@ input{
     border: 1px solid var(--footer-background);
     border-radius: 5px;
 }
+input,textarea{
+    font-family: inherit;
+    font-size: inherit;
+}
 textarea{
-    position: relative;
-    left: -5px;
-    display: inline-block;
-    width: 170px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 0;
     border: 1px solid var(--footer-background);
-    opacity: .7;
     border-radius: 5px;
+    width: 200px;
+}
+textarea::placeholder{
+    padding-left: 3px;
 }
 .messageLabel{
     position: relative;
@@ -43,9 +46,7 @@ textarea{
     background-color: var(--primary-color);
     color: #fffefe;
     border: none;
-    position: relative;
-    left: 50px;
-    width: 175px;
+    width: 200px;
     border-radius: 5px;
 }
 .submitButton:hover{

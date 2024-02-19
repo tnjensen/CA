@@ -23,19 +23,19 @@ function Contact(){
             <div className={styles.counter}>{counter}</div>
             {message && <div className={styles.submitMessage}>{message}</div>}
             <form onSubmit={handleSubmit} className={styles.contactForm}>
-                <div><label htmlFor='fullName'>Full Name</label>
-                <input type='text' name='fullName' minLength='3' required />
+                <div>{/* <label htmlFor='fullName'>Full Name</label> */}
+                <input placeholder="Full name" type='text' name='fullName' minLength='3' required />
                 </div>
-                <div><label htmlFor='subject'>Subject</label>
-                <input type='text' name='subject' minLength='3' required />
-                </div>
-                <div>
-                <label htmlFor='email'>Email</label>
-                <input type='email' name='email' required />
+                <div>{/* <label htmlFor='subject'>Subject</label> */}
+                <input placeholder="Subject" type='text' name='subject' minLength='3' required />
                 </div>
                 <div>
-                <label className={styles.messageLabel} htmlFor='body'>Message</label>
-                <textarea cols={30} rows={5} name='body' minLength='3' required />
+                {/* <label htmlFor='email'>Email</label> */}
+                <input placeholder="Email" type='email' name='email' required />
+                </div>
+                <div>
+                {/* <label className={styles.messageLabel} htmlFor='body'>Message</label> */}
+                <textarea  placeholder="Message" cols={30} rows={5} name='body' minLength='3' required />
                 </div>
                 <input type='submit' className={styles.submitButton} value='Send' />
             </form>
