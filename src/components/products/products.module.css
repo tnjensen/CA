@@ -5,6 +5,7 @@
     min-height: 100vh;
     position: relative;
     margin-bottom: 40px;
+    gap: 15px;
 }
 .mainContent h1{
     min-width: 100%;
@@ -12,7 +13,7 @@
 }
 .searchBar{
     text-align: left;
-    margin: 20px 0 0 35px;
+    margin: 20px 0 20px 10px;
 }
 .searchBar input{
     border-radius: 20px;
@@ -22,7 +23,7 @@
     color: #fffefe;
     background-color: var(--primary-color);
     position: absolute;
-    top: -123px;
+    top: -143px;
     right: 10px;
     border-radius: 50%;
     padding: 0 3px;
@@ -32,6 +33,9 @@
     flex-direction: column;
     max-width: 220px;
     margin: 0 12px;
+    padding: 15px;
+    border: 1px solid rgba(33,33,33,.5);
+    border-radius: 5px;
 }
 .productCard img{
     max-width: 220px;
