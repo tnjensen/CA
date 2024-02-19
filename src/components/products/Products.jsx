@@ -72,6 +72,7 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
+                    <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
                 </div>
             ))
         ) : (
@@ -80,6 +81,7 @@ function Products(){
                     <h2>{product.title}</h2>
                     <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
                     <p>{product.description}</p>
+                    <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
                 </div>
             ))
         )

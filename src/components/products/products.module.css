@@ -41,6 +41,18 @@
 .productCard img:hover{
     opacity: .8;
 }
+.viewProductButton{
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: .8;
+    border-radius: 5px;
+    color: #fffefe;
+}
+.viewProductButton:hover{
+    opacity: .7;
+}
 @media screen and (min-width: 768px){
     h1{
         font-size: 34px;
