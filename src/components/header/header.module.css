@@ -8,7 +8,8 @@
 .headerLeft i{
     padding-right: 10px;
     cursor: pointer;
-    /* color: #fffefe; */
+    color: var(--secondary-color);
+    font-size: 20px;
 }
 .headerLeft i:active{
     color: black;
@@ -20,8 +21,13 @@
 }
 .headerRight i{
     cursor: pointer;
-    /* color: #fffefe; */
+    color: var(--primary-color);
 }
 .headerRight i:active{
     color: black;
+}
+@media screen and (min-width:768px) {
+    .headerLeft i{
+        font-size: 22px;
+    }
 }
