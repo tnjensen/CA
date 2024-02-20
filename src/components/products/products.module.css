@@ -31,13 +31,14 @@
 .productCard{
     display: flex;
     flex-direction: column;
-    max-width: 220px;
+    justify-content: space-between;
+    max-width: 250px;
     margin: 0 12px;
-    padding: 15px;
+    padding: 5px 15px 30px 15px;
 }
 .productCard img{
-    width: 220px;
-    height: 250px;
+    width: 240px;
+    height: 280px;
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
@@ -47,6 +48,7 @@
     border-radius: 5px;
 }
 .viewProductButton{
+    
     background-color: var(--primary-color);
     padding: 10px 20px;
     text-decoration: none;
