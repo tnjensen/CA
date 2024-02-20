@@ -8,11 +8,13 @@ import styles from './layout.module.css';
 // passing through "children" in a component
 function Layout(){
     return(
-        <div className={styles.wrapper}>
+        <>
             <Header />
+           {/*  <div className={styles.wrapper}> */}
             <Outlet />
+           {/*  </div> */}
             <Footer />
-        </div>
+        </>
     )
 }
 export default Layout;

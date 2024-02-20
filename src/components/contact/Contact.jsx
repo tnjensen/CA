@@ -20,21 +20,18 @@ function Contact(){
     return(
         <div className={styles.mainContent}>
             <h1 className={styles.contactHeader}>Contact us</h1>
-            <div className={styles.counter}>{counter}</div>
             {message && <div className={styles.submitMessage}>{message}</div>}
             <form onSubmit={handleSubmit} className={styles.contactForm}>
-                <div>{/* <label htmlFor='fullName'>Full Name</label> */}
+                <div>
                 <input placeholder="Full name" type='text' name='fullName' minLength='3' required />
                 </div>
-                <div>{/* <label htmlFor='subject'>Subject</label> */}
+                <div>
                 <input placeholder="Subject" type='text' name='subject' minLength='3' required />
                 </div>
                 <div>
-                {/* <label htmlFor='email'>Email</label> */}
                 <input placeholder="Email" type='email' name='email' required />
                 </div>
                 <div>
-                {/* <label className={styles.messageLabel} htmlFor='body'>Message</label> */}
                 <textarea  placeholder="Message" cols={30} rows={5} name='body' minLength='3' required />
                 </div>
                 <input type='submit' className={styles.submitButton} value='Send' />

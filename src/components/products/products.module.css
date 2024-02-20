@@ -1,40 +1,30 @@
 .mainContent{
+    min-height: 100vh;
+    position: relative;
+}
+.products{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 100vh;
-    position: relative;
-    margin-bottom: 40px;
-    gap: 15px;
-}
-.mainContent h1{
-    min-width: 100%;
-    text-align: center;
+    padding-bottom: 40px;
 }
 .searchBar{
     text-align: left;
-    margin: 20px 0 20px 10px;
+    padding: 10px 0 0 40px;
 }
 .searchBar input{
     border-radius: 20px;
     border: 1px solid rgba(33,33,33,.5);
 }
-.counter{
-    color: #fffefe;
-    background-color: var(--primary-color);
-    position: absolute;
-    top: -143px;
-    right: 10px;
-    border-radius: 50%;
-    padding: 0 3px;
-}
 .productCard{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #fffefe;
     max-width: 250px;
-    margin: 0 12px;
+    margin: 10px;
     padding: 5px 15px 30px 15px;
+    border-radius: 5px;
 }
 .productCard img{
     width: 240px;
@@ -48,7 +38,6 @@
     border-radius: 5px;
 }
 .viewProductButton{
-    
     background-color: var(--primary-color);
     padding: 10px 20px;
     text-decoration: none;
@@ -70,5 +59,10 @@
     input{
         width: 250px;
     }
+}
+@media screen and (min-width: 1441px){
+   .counter{
+        right: 200px;
+   }
 }
 

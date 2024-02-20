@@ -5,10 +5,8 @@
    --footer-background: #555;
 }
 body{
-  max-width: 1440px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: #e6e3e3;
 }
 a:active{
   color: black;

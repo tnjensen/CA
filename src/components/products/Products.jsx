@@ -65,27 +65,29 @@ function Products(){
             onChange={(e) => searchItems(e.target.value)}/>
         </div>
         <div className={styles.mainContent}>
-            <div className={styles.counter}>{counter}</div>
-        {searchInput.length > 1 ? (
-            filteredResults.map((product) => (
-                <div key={product.id} className={styles.productCard}>
-                    <h2>{product.title}</h2>
-                    <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
-                    <p>{product.description}</p>
-                    <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
-                </div>
-            ))
-        ) : (
-        products.map((product) => (
-                <div key={product.id} className={styles.productCard}>
-                    <h2>{product.title}</h2>
-                    <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
-                    <p>{product.description}</p>
-                    <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
-                </div>
-            ))
-        )
-    }  
+            {/* <div className={styles.counter}>{counter}</div> */}
+            <div className={styles.products}>
+            {searchInput.length > 1 ? (
+                filteredResults.map((product) => (
+                    <div key={product.id} className={styles.productCard}>
+                        <h2>{product.title}</h2>
+                        <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
+                        <p>{product.description}</p>
+                        <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
+                    </div>
+                ))
+            ) : (
+            products.map((product) => (
+                    <div key={product.id} className={styles.productCard}>
+                        <h2>{product.title}</h2>
+                        <Link to={"/product/" + product.id} element={<Product />}><img src={product.imageUrl} alt='Product image' /></Link>
+                        <p>{product.description}</p>
+                        <Link to={"/product/" + product.id} className={styles.viewProductButton} element={<Product />}>View product</Link>
+                    </div>
+                ))
+            )
+        }
+            </div>  
         </div>
         </>
     );

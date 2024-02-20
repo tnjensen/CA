@@ -1,9 +1,13 @@
 .headerTop{
+    
+}
+.headerContent{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(33,33,33,.3);
-    padding: 15px;
 }
 .headerLeft i{
     padding-right: 10px;
@@ -29,8 +33,30 @@
 .headerRight i:active{
     color: black;
 }
+.headerRight{
+    display: flex;
+}
+.counter{
+    color: #fffefe;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -15px;
+    right: 10px;
+}
 @media screen and (min-width:768px) {
     .headerLeft i, .headerRight i{
         font-size: 22px;
+    }
+}
+@media screen and (min-width:1441px) {
+    .headerLeft{
+        margin-left: 15px;
+    }
+    .headerRight{
+        margin-right: 15px;
     }
 }

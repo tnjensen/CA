@@ -51,7 +51,6 @@ function Product() {
   return (
     <>
     <div className={styles.mainContent}>
-      <div className={styles.counter}>{counter}</div>
       <Link to={"/"} className={styles.backButton} element={<Home />}><i className="fa-solid fa-arrow-left"></i>Continue shopping</Link>
       <div className={styles.reviewContainer}>
         {data.reviews.map((review) => (
