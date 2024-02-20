@@ -61,11 +61,10 @@ function Products(){
     return(
         <>
         <div className={styles.searchBar}>
-            <input type="text" name='products' placeholder='Search for product' 
+            <input type="text" name='products' placeholder='Search products' 
             onChange={(e) => searchItems(e.target.value)}/>
         </div>
         <div className={styles.mainContent}>
-            {/* <div className={styles.counter}>{counter}</div> */}
             <div className={styles.products}>
             {searchInput.length > 1 ? (
                 filteredResults.map((product) => (

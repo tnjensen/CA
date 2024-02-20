@@ -11,6 +11,8 @@
 .cartHeader{
     min-width: 100%;
     text-align: center;
+    margin: 0;
+    padding: 20px 0 15px 0;
 }
 .cartCard{
     display: flex;

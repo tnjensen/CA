@@ -33,9 +33,7 @@ function Cart(){
     }
     return(
         <div className={styles.cartContent}>
-            <div className={styles.cartHeader}>
-                <h1>Cart</h1>
-            </div>
+            <h1 className={styles.cartHeader}>Cart</h1>           
             <div className={styles.cartCards}>
             {cart.length ? (
                 cart.map((product) => (

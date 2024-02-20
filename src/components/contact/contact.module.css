@@ -3,8 +3,9 @@
     text-align: center;
     position: relative;
 }
-.mainContent h2{
-    margin-top: 40px;
+.contactHeader{
+    margin: 0;
+    padding-top: 20px;
 }
 .contactForm{
     margin-top: 20px;
@@ -60,15 +61,6 @@ textarea::placeholder{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-}
-.counter{
-    color: #fffefe;
-    background-color: var(--primary-color);
-    position: absolute;
-    top: -80px;
-    right: 10px;
-    border-radius: 50%;
-    padding: 0 3px;
 }
 @media screen and (min-width: 768px){
     h1{

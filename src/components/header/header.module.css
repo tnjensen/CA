@@ -1,10 +1,11 @@
 .headerTop{
-    
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(33,33,33,.2);
 }
 .headerContent{
     max-width: 1440px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;

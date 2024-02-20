@@ -10,9 +10,9 @@ function Layout(){
     return(
         <>
             <Header />
-           {/*  <div className={styles.wrapper}> */}
+            <div className={styles.wrapper}>
             <Outlet />
-           {/*  </div> */}
+            </div>
             <Footer />
         </>
     )
