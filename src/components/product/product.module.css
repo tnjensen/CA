@@ -74,9 +74,10 @@
     border-radius: 50%;
     padding: 0 3px;
 }
-.discountPrice{
+.ordinaryPrice{
     margin: 0 0 10px 0;
     text-transform: uppercase;
+    text-decoration: line-through;
 }
 .addToCartMessage{
     border: 1px solid var(--secondary-color);
