@@ -20,7 +20,6 @@ function Checkout(){
     return(
         <div className={styles.checkoutContent}>
         <h4>You have successfully checked out</h4>
-        <div className={styles.counter}>{counter}</div>
         <Link to={"/"} className={styles.backButton} element={<Home />}>Continue shopping</Link>
         </div>
     )

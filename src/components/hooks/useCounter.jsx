@@ -8,7 +8,7 @@ function useCounter(initialValue,key){
         const item = localStorage.getItem(key);
         if(item === null || item === undefined) return initialValue;
         try{
-           return JSON.parse(item);
+            return JSON.parse(item);
         }
         catch(error){
            return initialValue;

@@ -16,6 +16,7 @@ function Product() {
 
   const addToCart = (data) => {
     setCounter(counter + 1);
+    window.location.reload();
     setCart((cart) => {
       return [data, ...cart];
   });
@@ -77,8 +78,8 @@ function Product() {
           </>
           )
         }
-        {message && <div className={styles.addToCartMessage}>{message}
-      <i className="fa-solid fa-square-up-right"></i></div>}
+        {/* {message && <div className={styles.addToCartMessage}>{message}
+      <i className="fa-solid fa-square-up-right"></i></div>} */}
         <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
       </div>
     </div>
