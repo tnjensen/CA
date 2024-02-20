@@ -2,5 +2,5 @@
     max-width: 1440px;
     margin: 0 auto;
     text-align: center;
-    background-color: #f3ecec;
+    background-color: var(--main-background);
 }
