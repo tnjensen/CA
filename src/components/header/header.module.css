@@ -12,8 +12,10 @@
     align-items: center;
 }
 .headerLeft i{
-    padding-right: 5px;
+    padding-right: 8px;
     cursor: pointer;
+    position: relative;
+    top: -1px;
     color: var(--secondary-color);
     /* font-size: 22px; */
 }
@@ -43,8 +45,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    top: -15px;
-    right: 10px;
+    top: -13px;
+    right: 9px;
 }
 @media screen and (min-width:768px) {
     .headerLeft i, .headerRight i{
