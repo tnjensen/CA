@@ -53,35 +53,37 @@ function Product() {
     <>
     <div className={styles.mainContent}>
       <Link to={"/"} className={styles.backButton} element={<Home />}><i className="fa-solid fa-arrow-left"></i>Continue shopping</Link>
-      <div className={styles.reviewContainer}>
-        {data.reviews.map((review) => (
-          <div key={review.id} className={styles.review}>
-          <h3>Reviewed by: {review.username}</h3>
-          <p>{review.description}</p>
-          <span>Rating: {review.rating}</span>
+      <div className={styles.productDetails}>
+        <div className={styles.reviewContainer}>
+          {data.reviews.map((review) => (
+            <div key={review.id} className={styles.review}>
+            <h3>Reviewed by: {review.username}</h3>
+            <p>{review.description}</p>
+            <span>Rating: {review.rating}</span>
+            </div>
+          ))}
           </div>
-        ))}
-        </div>
-      <div className={styles.productCard}>
-        <h2>{data.title}</h2>
-        <img src={data.imageUrl} alt='Post image'/>
-        <p>{data.description}</p>
-        {data.discountedPrice !== data.price ? (
-          <>
-          <div className={styles.productPrice}>{`On offer: $${(data.discountedPrice).toFixed(2)}`}</div>
-         <div className={styles.ordinaryPrice}>{`Ord. price: $${(data.price).toFixed(2)}`}</div>
-         </>
-        ) : (
-          <>
-          <div className={styles.productPrice}>{`Price: $${data.discountedPrice}`}</div>
-          <div className={styles.discountPrice}>{`Not on offer`}</div>
+        <div className={styles.productCard}>
+          <h2>{data.title}</h2>
+          <img src={data.imageUrl} alt='Post image'/>
+          <p>{data.description}</p>
+          {data.discountedPrice !== data.price ? (
+            <>
+            <div className={styles.productPrice}>{`On offer: $${(data.discountedPrice).toFixed(2)}`}</div>
+          <div className={styles.ordinaryPrice}>{`Ord. price: $${(data.price).toFixed(2)}`}</div>
           </>
-          )
-        }
-        {/* {message && <div className={styles.addToCartMessage}>{message}
-      <i className="fa-solid fa-square-up-right"></i></div>} */}
-        <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
-      </div>
+          ) : (
+            <>
+            <div className={styles.productPrice}>{`Price: $${data.discountedPrice}`}</div>
+            <div className={styles.discountPrice}>{`Not on offer`}</div>
+            </>
+            )
+          }
+          {/* {message && <div className={styles.addToCartMessage}>{message}
+        <i className="fa-solid fa-square-up-right"></i></div>} */}
+          <button className={styles.addToCartButton} onClick={() => addToCart(data)}>Add to cart</button>
+        </div>
+        </div>
     </div>
     </>
   );
