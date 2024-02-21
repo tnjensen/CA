@@ -16,8 +16,8 @@ function Header(){
                 </div>
                 <div className={styles.headerCenter}><Nav /></div>
                 <div className={styles.headerRight}>
-                    <Link to={"/cart"} element={<Cart />}><i className='fa fa-shopping-cart'></i></Link>
                     <div className={styles.counter}>{counter}</div>
+                    <Link to={"/cart"} element={<Cart />}><i className='fa fa-shopping-cart'></i></Link>
                 </div>
             </div>
         </header>

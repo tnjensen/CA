@@ -70,6 +70,9 @@
     padding: 10px;
     text-transform: uppercase;
 }
+.discountPrice{
+    padding-bottom: 10px;
+}
 .counter{
     color: #fffefe;
     background-color: var(--primary-color);
