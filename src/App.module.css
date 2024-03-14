@@ -6,6 +6,7 @@
    --main-background: #f3f1f1;
 }
 body{
+  box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
 }

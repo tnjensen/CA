@@ -25,7 +25,10 @@ textarea{
     margin: 10px 0 0 0;
     border: 1px solid var(--footer-background);
     border-radius: 5px;
-    width: 70%;
+    width: 72%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 textarea::placeholder{
     padding-left: 3px;
@@ -42,7 +45,7 @@ textarea::placeholder{
     background-color: var(--primary-color);
     color: #fffefe;
     border: none;
-    width: 70%;
+    width: 72%;
     border-radius: 5px;
 }
 .submitButton:hover{
@@ -65,9 +68,9 @@ textarea::placeholder{
         width: 50%;
     }
     textarea{
-        width: 50%;
+        width: 51%;
     }
     .submitButton{
-        width: 50%;
+        width: 51%;
     }
 }
