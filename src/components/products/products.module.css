@@ -46,6 +46,7 @@
     vertical-align: middle;
 }
 .viewProductButton{
+    font-family: Lora, serif;
     background-color: var(--primary-color);
     padding: 10px 20px;
     text-decoration: none;
