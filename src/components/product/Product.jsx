@@ -70,8 +70,8 @@ function Product() {
           {data.discountedPrice !== data.price ? (
             <>
             <div className={styles.productPrice}>{`On offer: $${(data.discountedPrice).toFixed(2)}`}</div>
-          <div className={styles.ordinaryPrice}>{`Ord. price: $${(data.price).toFixed(2)}`}</div>
-          <div className={styles.discountPrice}>{`You save: $${(data.price).toFixed(2)-data.discountedPrice}`}</div>
+            <div className={styles.ordinaryPrice}>{`Ord. price: $${(data.price).toFixed(2)}`}</div>
+            <div className={styles.discountPrice}>{`You save: $${(data.price).toFixed(2)-data.discountedPrice}`}</div>
           </>
           ) : (
             <>
